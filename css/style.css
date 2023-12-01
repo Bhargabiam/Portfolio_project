@@ -137,10 +137,11 @@
 \*-----------------------------------*/
 
 *,
-*::after,
-*::before {
+*::before,
+*::after {
   margin: 0;
   border: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -343,7 +344,9 @@ body{
 
 :has(> .state-layer):hover .state-layer { opacity: 0.08;}
 
-:has(>.state-layer):is(:focus, :focus-visible, :active) .state-layer { opacity: 0.12;}
+:has(> .state-layer):is(:focus, :focus-visible, :active) .state-layer { 
+  opacity: 0.12;
+}
 
 .section {
   padding-block: var(--section-padding);
@@ -389,8 +392,8 @@ body{
  */
 
 .chip{
-  height: 32;
-  width: max-content;
+  height: 32px;
+  max-width: max-content;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -420,10 +423,10 @@ body{
 \*-----------------------------------*/
 
 .topbar{
-  background: var(--background);
+  background-color: var(--background);
   position: fixed;
+  top: 0;
   left: 0;
-  right: 0;
   width: 100%;
   height: var(--top-bar-height);
   display: flex;
@@ -453,9 +456,7 @@ body{
   #HERO
 \*-----------------------------------*/
 
-.hero {
-  padding-block-start: calc(var(--top-bar-height) +24px);
-}
+.hero { padding-block-start: calc(var(--top-bar-height) + 24px); }
 
 .hero .container {
   display: grid;

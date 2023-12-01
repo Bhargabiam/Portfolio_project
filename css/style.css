@@ -367,6 +367,10 @@ body{
   object-fit: cover;
 }
 
+.tab-content:not(.active) {display: none;}
+
+.section-title { margin-block-end: 16px;}
+
 
 /*-----------------------------------*\
   #COMPONENT
@@ -461,6 +465,25 @@ body{
  * CARD
  */
 
+.card{
+  background-color: var(--surface-container-low);
+  border-radius: var(--radius-medium);
+  padding: 16px;
+  --state-layer-bg: var(--on-surface);
+}
+
+.card-banner{
+  border-radius: var(--radius-medium);
+}
+
+.card-content{
+  display: grid;
+  gap: 4px;
+}
+
+.card-title{ color: var(--on-surface);}
+
+.card-subtitle{ color: var(--on-surface-variant);}
 /**
  * INPUT FIELD
  */
@@ -572,9 +595,51 @@ body{
   #PROJECT
 \*-----------------------------------*/
 
+.project-list{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
 /*-----------------------------------*\
   #RESUME
 \*-----------------------------------*/
+
+.resume-tab .list{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-block-end: 28px;
+}
+
+.resume-card{
+  display: grid;
+  gap: 4px;
+}
+
+.resume-card .card-subtitle {
+  color: var(--primary);
+}
+
+.resume-card .card-text { color: var(--on-surface-variant);}
+
+.resume-bottom-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.resume-bottom-item{
+  background-color: var(--surface-container);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: var(--radius-small);
+}
+
+.resume-bottom-item .icon {
+  height: 28px;
+}
 
 /*-----------------------------------*\
   #CONTACT
